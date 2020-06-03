@@ -34,3 +34,25 @@ body{
 .navbar-dark{
     background-color: #512DAB;
 }
+.tab-content{
+    border-left: 1px solid #9575CD;
+    border-right: 1px solid #9575CD;
+    border-bottom: 1px solid #9575CD;
+    padding: 10px;
+}
+.card-header{
+    background-color:blue;
+}
+.carousel{
+    background-color: #512DAB;
+}
+.carousel-item{
+ height: 200px;
+}
+.carousel-item img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+
+}
