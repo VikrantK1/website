@@ -179,7 +179,7 @@
     <div class="container">
         <div class="row row-content">
             <div class="col">
-                <div class="carousel slide" id="#mycarousal" data-ride="carousel">
+                <div class="carousel slide" id="mycarousel" data-ride="carousel">
                      <div class="carousel-inner" role="listbox">
                          <div class="carousel-item active">
                             <img src="img/uthappizza.png" alt="uthappizza" class="d-block img-fluid">
@@ -215,8 +215,8 @@
 
                          <ol class="carousel-indicators">
                              <li class="active" data-target="#mycarousal" data-slide-to="0"></li>
-                             <li data-target="#mycarousal" data-slide-to="1"></li>
-                             <li data-target="#mycarousal" data-slide-to="2"></li>
+                             <li data-target="#mycarousel" data-slide-to="1"></li>
+                             <li data-target="#mycarousel" data-slide-to="2"></li>
                          </ol>
                         
                         <a class="carousel-control-prev" href="#mycarousel" data-slide="prev" role="button">
@@ -226,6 +226,12 @@
                         <a class="carousel-control-next" href="#mycarousel" data-slide="next" role="button">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </a>
+                        
+                        <button class="btn btn-danger" id="carouselButton">
+                                 <i class="fa fa-pause "></i>      
+                        </button>
+                            
+                        
                     </div>
                 </div>
             </div>
@@ -403,5 +409,29 @@
           $('[data-toggle="tooltip"]').tooltip();
       });
     </script> -->
+    <script>
+        $(document).ready(function() {
+            $("#mycarousel").carousel({interval:3000})
+            $("#carouselButton").click( function(){
+                
+                if($("#carouselButton").children("i").hasClass('fa-pause'))
+                {
+                    
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("i").removeClass('fa-pause');
+                    $("#carouselButton").children("i").addClass('fa-play');
+                }
+                else  if($("#carouselButton").children("i").hasClass('fa-play'))
+                {
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("i").removeClass('fa-play');
+                    $("#carouselButton").children("i").addClass('fa-pause');
+                }
+            }    
+            );
+           
+            
+        });
+    </script>
 </body>
 </html>
